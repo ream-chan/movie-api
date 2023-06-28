@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 
 export function NavBar () {
     return (
-        <header>
-          {/* <div className="container-fluid"> */}
+        <header className="sticky-top">
+          
             <nav>
                 <label className="logo">ReamMovie</label>
                 <ul>
