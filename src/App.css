@@ -1,9 +1,11 @@
-
+body {
+  background-color: black;
+}
 /* navbar start */
-nav  ul{
+ nav  ul{
   float: right;
   margin: 18px;
-}
+} 
 nav {
   background-color: black;
   height: 70px;
@@ -22,19 +24,135 @@ nav {
   font-weight: 600;
 } 
 .normal{
-  color: white !important;
+  color: white ;
   margin: 20px;
   font-size: larger;
   font-weight: 600; 
 } 
 /* navbar end */
 
-.c-item {
-  height: 580px;
+
+/* Carousel start */
+.vh-80{
+  height: 85%;
+  opacity: 0.6;
+  width: 100%;
+  color: white;
+  
 }
-.c-img {
-  height: 100%;
-  object-fit: cover;
-  filter: brightness();
+.vh-80 h1{
+  position: absolute;
+  top: 300px;
+  left: 30px;
+}
+.vh-80 p{
+  position: absolute;
+  top: 400px;
+  left: 30px;
+  font-weight: 700;
+}
+/* Carousel end*/
+
+/* Popular title start*/
+.popular-title{
+  font-size: 60px;
+  text-align: center;
+  margin: 25px;
+  font-weight: 900;
+  color: greenyellow;
+}
+.recommended-title{
+  font-size: 40px;
+  text-align:start;
+  margin: 35px;
+  font-weight: 900;
+  color: greenyellow;
+}
+/* Popular title end*/
+
+
+/* Popular Movie start*/
+.vh-50{
+  height: 50vh;
+  background-color: black;
+  
+}
+.card-text{
+  font-size: 15px;
+  text-align: center;
+  font-weight: 800;
+  color: white;
+}
+/* Popular Movie end*/
+
+/* Search hero start*/
+.masthead {
+   
+    margin-top: 50px;
+    position: relative; 
+    background: url(./images/john-wick-searchbar.jpg);
+    background-size: cover;
+    min-height: 90vh;
+    
 }
 
+@media (max-width: 768px) {
+  .masthead{
+    min-height: 30vh;
+  }
+}
+
+input{
+  margin-top: 100px;
+  border: none;
+  outline: none;
+  padding: 15px 40px;
+  opacity: 0.8;
+  color: black;
+  font-weight: 800;
+}
+button {
+  background-color: #4B0CB7;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  margin-top: 100px;
+  color: white;
+  font-weight: 700;
+}
+/* Search hero end*/
+
+
+/* Footer start*/
+.border-bottom-c{
+  border-color:  greenyellow !important;
+}
+.list{
+  color: greenyellow;
+  font-size: 20px;
+}
+/* Footer end*/
+
+
+/*title-trend start*/
+.title-trend{
+   color: greenyellow;
+   font-weight: 900;
+   font-size: 45px;
+   margin: 35px;
+}
+.trend img{
+  width: 100%;
+}
+/*title-trend end*/
+
+/*load start*/
+.load {
+  background-color: #4B0CB7;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 700;
+
+}
+/*load end*/

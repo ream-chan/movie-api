@@ -5,11 +5,11 @@ import React from 'react'
 export default function Card({poster_path, title, date}) {
   return (
     <>
-      <div class="card" >
+      <div class="card vh-50" >
         <img src={poster_path}class="card-img-top" alt="..." />
         <div class="card-body">
-          <p class="card-text">{title} </p>
-          <p>{date}</p>
+          <p class="card-text">{title} {date} </p>
+          
         </div>
       </div>
     </>
