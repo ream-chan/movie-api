@@ -70,7 +70,7 @@ export function Upcoming() {
     const getApi = () => {
         fetch("https://api.themoviedb.org/3/movie/upcoming?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=1")
         .then(resp => resp.json())
-        .then(resp => console.log(resp.results))
+        .then(resp => setUpcoming(resp.results))
           }
           const getanotherApi = () => {
            fetch("")
@@ -99,7 +99,6 @@ export function Upcoming() {
          ))
        }
        
-       <button className='load'>Load more</button>
        
         <Recommed />
        </div>

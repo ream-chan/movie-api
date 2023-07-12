@@ -67,19 +67,25 @@ export default function Trending() {
         "title": "No Hard Feelings",
        }
       ])
+      const[load, setLoad] = useState([])
+      const [visible, setVisible]= useState(6);
+      const showMoreItems = () => {
+        setVisible((prevValue) => prevValue + 6);
+      }
+      const getApii = () => {
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=2`)
+        .then((resp) =>resp.json())
+        .then((resp )=>setLoad(resp.results))
+          }
       const getApi = () => {
-       fetch("https://api.themoviedb.org/3/movie/popular?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=1")
+       fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=1")
        .then(resp => resp.json())
-       .then(resp => console.log(resp.results))
+       .then(resp => setTrending(resp.results))
          }
-         const getanotherApi = () => {
-          fetch("https://api.themoviedb.org/3/movie/popular?api_key=4113f3ad734e747a5b463cde8c55de42&language=en-US&page=2")
-          .then(resp => resp.json())
-          .then(resp => console.log(resp.results))
-            }
+       
          useEffect(()=> {
           getApi()
-          getanotherApi()
+          getApii()
         },[]) 
         
     return (
@@ -92,14 +98,24 @@ export default function Trending() {
         <h1 className='title-trend'>Trending</h1>
         <div className="row g-3">
       {
-        trending && trending.map(props => (
+         trending.slice(0, visible).map(props => (
           <div className='col-6 col-sm-6 col-md-6 col-lg-3 col-xxl-2' >
-            <Link to={`/trending${props.id}`} className='text-decoration-none'>
+            <Link to={`/popular/${props.id}`} className='text-decoration-none'>
             <Card poster_path={props.poster_path} title={props.title} />
             </Link>
           </div>
         ))
       }
+          {
+         load.slice(0, visible).map(props => (
+          <div className='col-6 col-sm-6 col-md-6 col-lg-3 col-xxl-2' >
+            <Link to={`/popular/${props.id}`} className='text-decoration-none'>
+            <Card poster_path={props.poster_path} title={props.title} />
+            </Link>
+          </div>
+        ))
+      }
+      <button className='load' onClick={showMoreItems}>Load more</button>
        <Recommed />
       </div>
       </div>

@@ -8,6 +8,7 @@ import Trending from './components/Trending';
 import { Upcoming } from './pages/upComing';
 import TopRated from './pages/topRated';
 import MovieDetail from './pages/movieDetail';
+import Subcribe from './pages/Subcribe';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
          <Route path='/upcoming' element={<Upcoming/>} />
          <Route path='/toprated' element={<TopRated />} />
          <Route path="/popular/:id" element={<MovieDetail />} />
+         <Route path='/subcribe' element={<Subcribe />} />
       </Routes>
    <Footer />
   </>
